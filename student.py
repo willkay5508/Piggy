@@ -56,7 +56,7 @@ class Piggy(PiggyParent):
     STUDENT PROJECTS
     ****************
     '''
-    def kay(self):
+    def test(self):
       print("test")
       
     def dance(self):
