@@ -18,7 +18,7 @@ class PiggyParent(gopigo3.GoPiGo3):
 
     def __init__(self, addr=8, detect=True):
         gopigo3.GoPiGo3.__init__(self)
-        self.MIDPOINT = 1500
+        self.MIDPOINT = 1300
         self.scan_data = {}
         # mutex sensors on IC2
         self.distance_sensor = EasyDistanceSensor(port="RPI_1", use_mutex=True)
@@ -51,8 +51,8 @@ class PiggyParent(gopigo3.GoPiGo3):
         response = str.lower(input("Do you want to check if I'm driving straight? (y/n)"))
         if 'y' in response:
             while True:
-                self.set_motor_limits(self.MOTOR_LEFT, self.LEFT_DEFAULT)
-                self.set_motor_limits(self.MOTOR_RIGHT, self.RIGHT_DEFAULT)
+                self.set_motor_limits(self.MOTOR_LEFT, self.LEFT_SPEED)
+                self.set_motor_limits(self.MOTOR_RIGHT, self.RIGHT_SPEED)
                 print("LEFT: {} // RIGHT: {} ".format(self.MOTOR_LEFT, self.MOTOR_RIGHT))
                 self.fwd()
                 time.sleep(1)

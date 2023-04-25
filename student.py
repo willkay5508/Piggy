@@ -58,8 +58,6 @@ class Piggy(PiggyParent):
     '''
     def test(self):
       print("test")
-      self.right(5)
-      self.left(5)
         
       
     def dance(self):
