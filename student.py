@@ -57,7 +57,7 @@ class Piggy(PiggyParent):
     ****************
     '''
     def test(self):
-      for variable in (4):
+      for variable in 4:
         self.fwd()
         time.sleep(1.5)
         self.stop()
