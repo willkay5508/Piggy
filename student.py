@@ -103,7 +103,9 @@ class Piggy(PiggyParent):
         self.right()
         time.sleep(0.4)
         self.stop()
-          #if self.read_distance() < 250:
+          if self.read_distance() < 250:
+            self.stop()
+            print("Not Enough Space!")
 
     def shake(self):
         """ Another example move """
