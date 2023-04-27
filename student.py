@@ -35,6 +35,7 @@ class Piggy(PiggyParent):
         # Please feel free to change the menu and add options.
         print("\n *** MENU ***") 
         menu = {"n": ("Navigate", self.nav),
+                "sd": ("Scan for Dance", self.safe_to_dance),
                 "d": ("Dance", self.dance),
                 "o": ("Obstacle count", self.obstacle_count),
                 "s": ("Shy", self.shy),
@@ -68,9 +69,8 @@ class Piggy(PiggyParent):
       
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
-        # TODO: check to see if it's safe before dancing
-        
-        # lower-ordered example...
+        #check to see if it's safe before dancing
+      
         for variable in range(5):
           self.right()
           time.sleep(0.5)
@@ -100,7 +100,7 @@ class Piggy(PiggyParent):
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
-        pass
+        self.scan()
 
     def shake(self):
         """ Another example move """
