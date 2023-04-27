@@ -101,7 +101,7 @@ class Piggy(PiggyParent):
     def safe_to_dance(self):
       for variable in range(10):
         self.right()
-        time.sleep(0.3333333)
+        time.sleep(0.35)
         self.stop()
           #if self.read_distance() < 250:
 
