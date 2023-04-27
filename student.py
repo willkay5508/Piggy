@@ -57,37 +57,14 @@ class Piggy(PiggyParent):
     ****************
     '''
     def test(self):
-      self.fwd()
-      time.sleep(1.5)
-      self.stop()
-
-      self.right()
-      time.sleep(0.8)
-      self.stop()
-
-      self.fwd()
-      time.sleep(1.5)
-      self.stop()
-
-      self.right()
-      time.sleep(0.8)
-      self.stop()
-
-      self.fwd()
-      time.sleep(1.5)
-      self.stop()
-
-      self.right()
-      time.sleep(0.8)
-      self.stop()
-
-      self.fwd()
-      time.sleep(1.5)
-      self.stop()
-
-      self.right()
-      time.sleep(0.8)
-      self.stop()
+      for variable in range(4):
+        self.fwd()
+        time.sleep(1.5)
+        self.stop()
+  
+        self.right()
+        time.sleep(0.8)
+        self.stop()
       
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
@@ -102,6 +79,19 @@ class Piggy(PiggyParent):
           time.sleep(0.25)
           self.stop()
           self.left()
+          time.sleep(0.5)
+          self.stop()
+          self.back()
+          time.sleep(0.25)
+          self.stop()
+
+          self.left()
+          time.sleep(0.5)
+          self.stop()
+          self.back()
+          time.sleep(0.25)
+          self.stop()
+          self.right()
           time.sleep(0.5)
           self.stop()
           self.back()
