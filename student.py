@@ -70,35 +70,35 @@ class Piggy(PiggyParent):
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
         #check to see if it's safe before dancing
-      if self.safe_to_dance():
-        for variable in range(5):
-          self.right()
-          time.sleep(0.5)
-          self.stop()
-          self.back()
-          time.sleep(0.25)
-          self.stop()
-          self.left()
-          time.sleep(0.5)
-          self.stop()
-          self.back()
-          time.sleep(0.25)
-          self.stop()
-
-          self.left()
-          time.sleep(0.5)
-          self.stop()
-          self.back()
-          time.sleep(0.25)
-          self.stop()
-          self.right()
-          time.sleep(0.5)
-          self.stop()
-          self.back()
-          time.sleep(0.25)
-          self.stop()
-      else:
-        print("Not Enough Room!")
+        if self.safe_to_dance():
+          for variable in range(5):
+            self.right()
+            time.sleep(0.5)
+            self.stop()
+            self.back()
+            time.sleep(0.25)
+            self.stop()
+            self.left()
+            time.sleep(0.5)
+            self.stop()
+            self.back()
+            time.sleep(0.25)
+            self.stop()
+  
+            self.left()
+            time.sleep(0.5)
+            self.stop()
+            self.back()
+            time.sleep(0.25)
+            self.stop()
+            self.right()
+            time.sleep(0.5)
+            self.stop()
+            self.back()
+            time.sleep(0.25)
+            self.stop()
+        else:
+          print("Not Enough Room!")
 
     def safe_to_dance(self):
       for variable in range(4):
