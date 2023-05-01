@@ -99,13 +99,12 @@ class Piggy(PiggyParent):
           self.stop()
 
     def safe_to_dance(self):
-      for variable in range(10):
-        self.right()
-        time.sleep(0.4)
+      self.right()
+      time.sleep(4)
+      if self.read_distance() < 250:
         self.stop()
-        if self.read_distance() < 250:
-          self.stop()
-          print("Not Enough Space!")
+        print("Not Enough Space!")
+      self.stop()
 
     def shake(self):
         """ Another example move """
