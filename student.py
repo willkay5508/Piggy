@@ -100,7 +100,7 @@ class Piggy(PiggyParent):
 
     def safe_to_dance(self):
       self.right()
-      time.sleep(4)
+      time.sleep(3.75)
       if self.read_distance() < 250:
         self.stop()
         print("Not Enough Space!")
