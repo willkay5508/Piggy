@@ -70,7 +70,8 @@ class Piggy(PiggyParent):
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
         #check to see if it's safe before dancing
-      
+      self.safe_to_dance()
+      if self.safe_to_dance():
         for variable in range(5):
           self.right()
           time.sleep(0.5)
@@ -97,14 +98,18 @@ class Piggy(PiggyParent):
           self.back()
           time.sleep(0.25)
           self.stop()
+      else:
+        print("Not Enough Room!")
 
     def safe_to_dance(self):
-      self.right()
-      time.sleep(3.75)
-      if self.scan() < 250:
+      for variable in range(4):
+        self.right()
+        time.sleep(0.9)
         self.stop()
-        print("Not Enough Room!")
-      self.stop()
+        self.scan()
+        if self.read_distance() < 250:
+          return False
+      return True
 
     def shake(self):
         """ Another example move """
