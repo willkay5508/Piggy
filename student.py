@@ -116,7 +116,7 @@ class Piggy(PiggyParent):
         self.fwd()
         time.sleep(0.5)
         self.stop()
-        self.self.read_distance()
+        self.read_distance()
         if self.read_distance() < 200:
           print("Not Enough Room!")
         
