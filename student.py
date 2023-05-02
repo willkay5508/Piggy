@@ -116,11 +116,12 @@ class Piggy(PiggyParent):
         self.fwd()
         self.read_distance()
         if self.read_distance() < 200:
-          self.back()
-          time.sleep(.3)
           self.stop()
-          print("Not Enough Room!")
-          return False
+          self.right()
+          time.sleep(0.8)
+          self.stop()
+          print("Turning Around!")
+          
         
       
     def shake(self):
