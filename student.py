@@ -112,13 +112,17 @@ class Piggy(PiggyParent):
 
     def wall(self):
       self.servo(1300)
-      for variable in range(10):
+      while True:
         self.fwd()
         time.sleep(0.5)
         self.stop()
         self.read_distance()
         if self.read_distance() < 200:
+          self.back()
+          time.sleep(.3)
+          self.stop()
           print("Not Enough Room!")
+          return False
         
       
     def shake(self):
