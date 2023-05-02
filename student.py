@@ -123,7 +123,21 @@ class Piggy(PiggyParent):
           time.sleep(1.6)
           self.stop()
           
-        
+    def box(self):
+      self.servo(1300)
+      while True:
+        self.fwd()
+        self.read_distance()
+        if self.read_distance() < 200:
+          time.sleep(0.5)
+          print("Going Around!")
+          self.stop()
+          self.right()
+          time.sleep(0.8)
+          self.stop()
+          self.servo(0)
+          self.fwd()
+          
       
     def shake(self):
         """ Another example move """
