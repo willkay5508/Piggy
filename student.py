@@ -35,7 +35,7 @@ class Piggy(PiggyParent):
         # Please feel free to change the menu and add options.
         print("\n *** MENU ***") 
         menu = {"n": ("Navigate", self.nav),
-                "sd": ("Scan for Dance", self.safe_to_dance),
+                "p": ("Stop At Wall", self.wall),
                 "d": ("Dance", self.dance),
                 "o": ("Obstacle count", self.obstacle_count),
                 "s": ("Shy", self.shy),
@@ -110,6 +110,17 @@ class Piggy(PiggyParent):
           return False
       return True
 
+    def wall(self):
+      self.servo(1300)
+      for variable in range(10):
+        self.fwd()
+        time.sleep(0.5)
+        self.stop()
+        self.self.read_distance()
+        if self.read_distance() < 200:
+          print("Not Enough Room!")
+        
+      
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
