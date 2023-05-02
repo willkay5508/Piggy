@@ -42,7 +42,8 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "w": ("kay", self.test)
+                "w": ("kay", self.test),
+                "b": ("Box", self.box)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -120,7 +121,7 @@ class Piggy(PiggyParent):
           print("Turning Around!")
           self.stop()
           self.right()
-          time.sleep(1.6)
+          time.sleep(1.7)
           self.stop()
           
     def box(self):
