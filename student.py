@@ -134,9 +134,13 @@ class Piggy(PiggyParent):
           self.stop()
           print("Which Way?")
           self.servo(1725)
-          if self.read_distance() < 800:
+          if self.read_distance() < 500:
             self.servo(875)
+            time.sleep(0.5)
+            self.stop()
           else:
+            time.sleep(0.5)
+            self.stop()
             self.left()
             time.sleep(0.8)
             self.stop()
@@ -149,7 +153,7 @@ class Piggy(PiggyParent):
                 self.fwd()
                 time.sleep(0.5)
                 self.stop()
-                self.left()
+                self.right()
                 time.sleep(0.8)
                 self.stop()
                 self.fwd()
