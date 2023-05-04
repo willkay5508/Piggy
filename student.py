@@ -129,10 +129,35 @@ class Piggy(PiggyParent):
       while True:
         self.fwd()
         self.read_distance()
-        if self.read_distance() < 500:
+        if self.read_distance() < 400:
           time.sleep(0.5)
-          print("Going Around!")
           self.stop()
+          print("Which Way?")
+          self.servo(1725)
+          if self.read_distance() < 800:
+            self.servo(875)
+          else:
+            self.left()
+            time.sleep(0.8)
+            self.stop()
+            time.sleep(1)
+            self.servo(600)
+            while True:
+              self.fwd()
+              self.read_distance()
+              if self.read_distance() > 250:
+                self.fwd()
+                time.sleep(0.5)
+                self.stop()
+                self.left()
+                time.sleep(0.8)
+                self.stop()
+                self.fwd()
+                time.sleep(3)
+                self.stop()
+                return False
+            return False
+          
           self.right()
           time.sleep(0.8)
           self.stop()
